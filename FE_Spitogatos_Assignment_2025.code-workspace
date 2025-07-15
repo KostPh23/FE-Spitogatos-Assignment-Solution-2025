@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "workbench.colorTheme": "One Monokai",
+    "workbench.iconTheme": "vs-seti"
+  }
+}

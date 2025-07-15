@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  color: #4f4f4f;
+}
+
+form {
+  width: 800px;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: none;
+}
+
+.form-container {
+  border-top: 2px solid #e8e8e8;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+legend {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.subject-field,
+.description-field,
+.emails-list,
+.emails-field {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+button {
+  display: inline-block;
+}

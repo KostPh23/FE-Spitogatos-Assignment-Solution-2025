@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Email Modal Component</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <form action="/submit" method="POST">
+      <fieldset>
+        <legend>Email sent Form</legend>
+
+        <div class="form-container">
+          <!--Subject-->
+          <div>
+            <label for="subject" class="subject">Subject *</label>
+            <input type="text" required class="subject-field" />
+          </div>
+
+          <!--Description-->
+          <div>
+            <label for="description" class="description">Description</label>
+            <textarea
+              required
+              minlength="10"
+              class="description-field"
+            ></textarea>
+          </div>
+
+          <!--Destination Emails-->
+          <div>
+            <label for="destination-emails" class="destination-emails"
+              >List of recipients</label
+            >
+            <textarea class="emails-list">test@email.com</textarea>
+            <input type="text" class="emails-field" />
+            <div class="emails-buttons">
+              <button>Enter all customers</button>
+              <button>Remove all clients</button>
+            </div>
+          </div>
+
+          <button>Cancel</button>
+          <button>Submit</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
