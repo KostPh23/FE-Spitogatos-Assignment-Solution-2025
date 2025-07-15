@@ -10,7 +10,7 @@ body {
 }
 
 form {
-  width: 800px;
+  width: 620px;
   margin: 0 auto;
 }
 
@@ -21,12 +21,24 @@ fieldset {
 .form-container {
   border-top: 2px solid #e8e8e8;
   border-bottom: 2px solid #e8e8e8;
+  padding: 1rem 0;
 }
 
 legend {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+}
+
+.subject,
+.description,
+.destination-emails {
+  font-weight: bold;
+}
+
+.required {
+  display: inline;
+  color: red;
 }
 
 .subject-field,
@@ -39,4 +51,32 @@ legend {
 
 button {
   display: inline-block;
+  text-transform: uppercase;
+  border: 1px solid #1f9210;
+  border-radius: 5px;
+}
+
+.enter-customers,
+.submit {
+  color: #fff;
+  background-color: #1f9210;
+  padding: 0.5rem;
+}
+
+.remove-customers,
+.cancel {
+  color: #1f9210;
+  background-color: #fff;
+  padding: 0.5rem;
+}
+
+.enter-customers,
+.remove-customers {
+  margin-bottom: 2rem;
+}
+
+.cancel,
+.submit {
+  display: float;
+  float: right;
 }
