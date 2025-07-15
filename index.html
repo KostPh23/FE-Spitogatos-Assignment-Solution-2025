@@ -13,15 +13,17 @@
 
         <div class="form-container">
           <!--Subject-->
-          <div>
-            <label for="subject" class="subject">Subject</label>
+          <div class="subject">
+            <label for="subject" class="subject-title">Subject</label>
             <p class="required">*</p>
             <input type="text" required class="subject-field" />
           </div>
 
           <!--Description-->
-          <div>
-            <label for="description" class="description">Description</label>
+          <div class="description">
+            <label for="description" class="description-title"
+              >Description</label
+            >
             <textarea
               required
               minlength="10"
@@ -30,18 +32,23 @@
           </div>
 
           <!--Destination Emails-->
-          <div>
-            <label for="destination-emails" class="destination-emails"
+          <div class="destination-emails">
+            <label for="destination-emails" class="emails-title"
               >List of recipients</label
             >
-            <textarea class="emails-list">test@email.com</textarea>
-            <input type="text" class="emails-field" />
+            <textarea class="emails-list"></textarea>
+            <input
+              type="text"
+              placeholder="Type name or email"
+              class="emails-field"
+            />
             <div class="emails-buttons">
               <button class="enter-customers">Enter all customers</button>
               <button class="remove-customers">Remove all clients</button>
             </div>
           </div>
-
+        </div>
+        <div class="form-control">
           <button class="cancel">Cancel</button>
           <button class="submit">Submit</button>
         </div>

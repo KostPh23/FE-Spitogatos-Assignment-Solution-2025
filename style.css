@@ -22,6 +22,7 @@ fieldset {
   border-top: 2px solid #e8e8e8;
   border-bottom: 2px solid #e8e8e8;
   padding: 1rem 0;
+  margin-bottom: 1rem;
 }
 
 legend {
@@ -30,9 +31,9 @@ legend {
   margin-bottom: 1rem;
 }
 
-.subject,
-.description,
-.destination-emails {
+.subject-title,
+.description-title,
+.emails-title {
   font-weight: bold;
 }
 
@@ -46,14 +47,44 @@ legend {
 .emails-list,
 .emails-field {
   display: block;
+  width: 100%;
   margin-bottom: 1rem;
+  border: 2px solid #e8e8e8;
+  border-radius: 5px;
+}
+
+.subject-field:focus,
+.description-field:focus,
+.emails-list:focus,
+.emails-field:focus {
+  outline: none;
+  border-color: #1f921080;
+}
+
+.subject-field,
+.emails-field {
+  height: 2rem;
+}
+
+.description-field {
+  height: 8rem;
+}
+
+.emails-list {
+  height: 10rem;
 }
 
 button {
   display: inline-block;
+  font-weight: bold;
   text-transform: uppercase;
   border: 1px solid #1f9210;
   border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #4f4f4f;
 }
 
 .enter-customers,
@@ -72,11 +103,9 @@ button {
 
 .enter-customers,
 .remove-customers {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
-.cancel,
-.submit {
-  display: float;
+.form-control {
   float: right;
 }
