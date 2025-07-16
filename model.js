@@ -16,4 +16,6 @@ export const loadEmails = async function () {
   }
 };
 
-export const saveSubject = function () {};
+export const saveSubject = function () {
+  state.subject;
+};
