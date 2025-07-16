@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <title>Email Modal Component</title>
     <link href="style.css" rel="stylesheet" />
+    <script defer type="module" src="controller.js"></script>
   </head>
 
   <body>
-    <form action="/submit" method="POST">
+    <form action="/submit" method="POST" class="main-form">
       <fieldset>
         <legend>Email sent Form</legend>
 
@@ -16,7 +17,7 @@
           <div class="subject">
             <label for="subject" class="subject-title">Subject</label>
             <p class="required">*</p>
-            <input type="text" required class="subject-field" />
+            <input type="text" class="subject-field" />
           </div>
 
           <!--Description-->
@@ -24,11 +25,7 @@
             <label for="description" class="description-title"
               >Description</label
             >
-            <textarea
-              required
-              minlength="10"
-              class="description-field"
-            ></textarea>
+            <textarea class="description-field"></textarea>
           </div>
 
           <!--Destination Emails-->
