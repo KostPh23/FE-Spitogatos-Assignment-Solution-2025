@@ -29,7 +29,7 @@ export const loadEmails = async function () {
     const data = await res.json();
 
     state.emails = data.map((customer) => {
-      return { email: customer.email };
+      return customer.email;
     });
   } catch (err) {
     console.error(err);

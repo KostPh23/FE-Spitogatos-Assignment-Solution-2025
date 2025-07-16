@@ -5,9 +5,30 @@ class EmailsView {
   // Autocomplete component
   addHandlerRenderEmails(handler) {
     const emailsFieldEl = this.#parentEl.querySelector(".emails-field");
-    emailsFieldEl.addEventListener("keydown", function (e) {
-      handler(e);
+    emailsFieldEl.addEventListener("keyup", function (e) {
+      if (e.key.length !== 1) return;
+      handler(emailsFieldEl.value);
     });
+  }
+
+  // Suggestions dropdown
+  addHandlerRenderSuggestions(handler) {
+    const emailsFieldEl = this.#parentEl.querySelector(".emails-field");
+    emailsFieldEl.addEventListener("keyup", function (e) {
+      if (e.key.length !== 1) return;
+      handler(emailsFieldEl.value);
+    });
+  }
+
+  renderSuggestions() {
+    const markup = `
+      <div class="dropdown">
+        <div class="dropdown-content">
+          <p>Hello World!</p>
+        </div>
+      </div>
+    `;
+    this.#parentEl.insertAdjacentHTML("afterbegin", markup);
   }
 }
 
