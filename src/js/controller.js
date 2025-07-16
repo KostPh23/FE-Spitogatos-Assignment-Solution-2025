@@ -15,6 +15,9 @@ const controlShowEmails = async function (input) {
       email.startsWith(input)
     );
     console.log(relevantEmails);
+
+    // 3) Show suggestions in a dropdown
+    emailsView.renderSuggestions(relevantEmails);
   } catch (err) {
     console.error(err);
   }
@@ -23,6 +26,7 @@ const controlShowEmails = async function (input) {
 const controlShowSuggestions = function (input) {
   try {
     // 3) Show suggestions in a dropdown
+
     emailsView.renderSuggestions();
   } catch (err) {
     console.error(err);
@@ -31,7 +35,7 @@ const controlShowSuggestions = function (input) {
 
 const init = function () {
   emailsView.addHandlerRenderEmails(controlShowEmails);
-  emailsView.addHandlerRenderSuggestions(controlShowSuggestions);
+  // emailsView.addHandlerRenderSuggestions(controlShowSuggestions);
 };
 
 init();

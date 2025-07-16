@@ -20,9 +20,9 @@ class EmailsView {
     });
   }
 
-  renderSuggestions() {
+  renderSuggestions(emails) {
     const markup = `
-      <div class="dropdown">
+      <div class="dropdown ${emails.length === 0 ? "hidden" : ""}">
         <div class="dropdown-content">
           <p>Hello World!</p>
         </div>

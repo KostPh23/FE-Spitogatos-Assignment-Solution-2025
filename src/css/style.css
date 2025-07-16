@@ -124,6 +124,10 @@ button:hover {
   z-index: 1;
 }
 
+.hidden {
+  display: none;
+}
+
 /* .dropdown:hover .dropdown-content {
   display: block;
 } */
