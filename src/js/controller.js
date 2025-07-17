@@ -34,9 +34,9 @@ const controlEmailInput = async function (inputEl) {
     await model.loadEmails();
 
     // 2) Filter emails
-    console.log(inputEl.value);
+    // console.log(inputEl.value);
     model.filterEmails(inputEl.value);
-    console.log(model.state.relevantEmails);
+    // console.log(model.state.relevantEmails);
 
     // 3) Show suggestions in a dropdown
     emailsView.renderSuggestions(model.state.relevantEmails, inputEl);
@@ -50,6 +50,7 @@ const init = function () {
   // emailsView.addHandlerRenderSuggestions(controlShowSuggestions);
   // mainView.listenCloseSuggestionLists();
   emailsView.addHandlerInput(controlEmailInput);
+  emailsView.addClickOutsideDropdown();
 };
 
 init();

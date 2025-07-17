@@ -36,6 +36,13 @@ class EmailsView {
     );
   }
 
+  addClickOutsideDropdown() {
+    document.addEventListener(
+      "click",
+      this.handleClickOutsideDropdown.bind(this)
+    );
+  }
+
   renderSuggestions(emails, inputEl) {
     const val = inputEl.value;
 
@@ -79,7 +86,16 @@ class EmailsView {
 
   handleClickSuggestedEmail(item, inputEl) {
     inputEl.value = item.querySelector("input").value;
-    this.closeAllLists();
+    // this.closeAllLists();
+    const value = inputEl.value;
+    if (value && !this.#selectedEmails.includes(value)) {
+      this.addTag(value);
+      inputEl.value = "";
+    }
+  }
+
+  handleClickOutsideDropdown(e) {
+    if (!e.target.closest(".dropdown-items")) this.closeAllLists();
   }
 
   closeAllLists() {
