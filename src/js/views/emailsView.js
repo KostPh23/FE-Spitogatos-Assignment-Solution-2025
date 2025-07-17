@@ -36,6 +36,25 @@ class EmailsView {
     );
   }
 
+  addHandlerEnterAllEmails(handler) {
+    const enterCustomersBtn = this.#parentEl.querySelector(".enter-customers");
+
+    enterCustomersBtn.addEventListener(
+      "click",
+      this.handleEnterAllEmails.bind(this, handler)
+    );
+  }
+
+  addHandlerRemoveAllEmails(handler) {
+    const removeCustomersBtn =
+      this.#parentEl.querySelector(".remove-customers");
+
+    removeCustomersBtn.addEventListener(
+      "click",
+      this.handleRemoveAllEmails.bind(this, handler)
+    );
+  }
+
   addClickOutsideDropdown() {
     document.addEventListener(
       "click",
@@ -72,6 +91,20 @@ class EmailsView {
     inputEl.parentNode.appendChild(suggestionBox);
   }
 
+  renderAddAllTags(emails) {
+    emails.forEach((email) => this.addTag(email));
+  }
+
+  renderRemoveAllTags(emails) {
+    emails.forEach((email) => {
+      const tagEls = [...this.#tagContainer.querySelectorAll(".tag")];
+      tagEls.forEach((tagEl) => {
+        const tagEmail = tagEl.textContent.replace(/\s×$/, "");
+        if (email === tagEmail) this.removeTag(email, tagEl);
+      });
+    });
+  }
+
   handleEmailOnEnter(inputEl, e) {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -96,6 +129,16 @@ class EmailsView {
 
   handleClickOutsideDropdown(e) {
     if (!e.target.closest(".dropdown-items")) this.closeAllLists();
+  }
+
+  handleEnterAllEmails(handler) {
+    // e.preventDefault();
+    handler();
+  }
+
+  handleRemoveAllEmails(handler) {
+    // e.preventDefault();
+    handler();
   }
 
   closeAllLists() {

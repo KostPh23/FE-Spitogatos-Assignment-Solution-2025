@@ -22,6 +22,19 @@ export const loadCustomers = async function () {
   }
 };
 
+export const loadAndFilterEmails = async function (inputEl) {
+  try {
+    // 1) Load emails
+    await loadEmails();
+
+    // 2) Filter emails
+    filterEmails(inputEl.value);
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
 export const loadEmails = async function () {
   try {
     const res = await fetch(
@@ -38,7 +51,7 @@ export const loadEmails = async function () {
   }
 };
 
-export const filterEmails = function (input) {
+const filterEmails = function (input) {
   state.relevantEmails = state.emails.filter((email) =>
     email.startsWith(input)
   );
