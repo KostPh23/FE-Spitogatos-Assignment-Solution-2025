@@ -57,7 +57,6 @@ legend {
 
 .subject-field:focus,
 .description-field:focus,
-.tag-container:focus,
 .emails-field:focus {
   outline: none;
   border-color: #1f921080;
