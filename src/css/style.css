@@ -31,6 +31,8 @@ legend {
   margin-bottom: 1rem;
 }
 
+/* Form fields */
+
 .subject-title,
 .description-title,
 .emails-title {
@@ -44,7 +46,7 @@ legend {
 
 .subject-field,
 .description-field,
-.emails-list,
+.tag-container,
 .emails-field {
   display: block;
   width: 100%;
@@ -55,7 +57,7 @@ legend {
 
 .subject-field:focus,
 .description-field:focus,
-.emails-list:focus,
+.tag-container:focus,
 .emails-field:focus {
   outline: none;
   border-color: #1f921080;
@@ -70,9 +72,11 @@ legend {
   height: 8rem;
 }
 
-.emails-list {
+/* .emails-list {
   height: 10rem;
-}
+} */
+
+/* Buttons */
 
 button {
   display: inline-block;
@@ -110,9 +114,12 @@ button:hover {
   float: right;
 }
 
+/* Dropdown selection menu */
+
 .dropdown {
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .dropdown-items {
@@ -149,3 +156,27 @@ button:hover {
 /* .dropdown:hover .dropdown-content {
   display: block;
 } */
+
+/* Removable client emails */
+
+.tag-container {
+  /* padding: 6px; */
+  min-height: 40px;
+  overflow: hidden;
+}
+
+.tag {
+  float: left;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 14px;
+  margin: 4px 6px 4px 0;
+  line-height: 1;
+}
+
+.tag .remove-tag {
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}

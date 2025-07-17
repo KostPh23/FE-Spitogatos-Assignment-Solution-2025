@@ -2,6 +2,8 @@
 
 class EmailsView {
   #parentEl = document.querySelector(".destination-emails");
+  #tagContainer = this.#parentEl.querySelector(".tag-container");
+  #selectedEmails = [];
   #data;
 
   // // Autocomplete component
@@ -22,9 +24,16 @@ class EmailsView {
 
   addHandlerInput(handler) {
     const emailsFieldEl = this.#parentEl.querySelector(".emails-field");
+
     emailsFieldEl.addEventListener("input", function () {
       handler(this);
     });
+
+    // Add email on Enter key
+    emailsFieldEl.addEventListener(
+      "keydown",
+      this.handleEmailOnEnter.bind(this, emailsFieldEl)
+    );
   }
 
   renderSuggestions(emails, inputEl) {
@@ -45,10 +54,10 @@ class EmailsView {
       )}</strong>${email.substr(val.length)}`;
       item.innerHTML += `<input type='hidden' value='${email}'>`;
 
-      item.addEventListener("click", function () {
-        inputEl.value = this.querySelector("input").value;
-        EmailsView.closeAllLists();
-      });
+      item.addEventListener(
+        "click",
+        this.handleClickSuggestedEmail.bind(this, item, inputEl)
+      );
 
       suggestionBox.appendChild(item);
     });
@@ -56,10 +65,49 @@ class EmailsView {
     inputEl.parentNode.appendChild(suggestionBox);
   }
 
+  handleEmailOnEnter(inputEl, e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const value = inputEl.value.trim();
+      if (value && !this.#selectedEmails.includes(value)) {
+        this.addTag(value);
+        inputEl.value = "";
+        this.closeAllLists();
+      }
+    }
+  }
+
+  handleClickSuggestedEmail(item, inputEl) {
+    inputEl.value = item.querySelector("input").value;
+    this.closeAllLists();
+  }
+
   closeAllLists() {
     /* Close all suggestion dropdown lists in the document*/
     const items = document.querySelectorAll(".dropdown-items");
     items.forEach((item) => item.remove());
+  }
+
+  addTag(input) {
+    if (this.#selectedEmails.includes(input)) return;
+    this.#selectedEmails.push(input);
+
+    const tag = document.createElement("div");
+    tag.classList.add("tag");
+    tag.innerHTML = `${input} <span class="remove-tag">&times;</span>`;
+
+    tag
+      .querySelector(".remove-tag")
+      .addEventListener("click", this.removeTag.bind(this, input, tag));
+
+    this.#tagContainer.appendChild(tag);
+  }
+
+  removeTag(input, tagEl) {
+    this.#selectedEmails = this.#selectedEmails.filter(
+      (email) => email !== input
+    );
+    tagEl.remove();
   }
 }
 
