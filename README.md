@@ -10,7 +10,7 @@ As a user:
 - I want to be allowed to **select multiple emails**. ✅
 - I want to **be displayed selected emails** as removable tags. ✅
 - I want to **click a button that fetches all customer emails** from the API. ✅
-- I want to **click a button that adds all emails** to the destination list. ✅
+- I want to **click a button that adds all emails** to the destination list. ✅\
 
 - I want to **click a button that shows loading state** during the API call.
 - I want to **click a button that handles errors** gracefully.
