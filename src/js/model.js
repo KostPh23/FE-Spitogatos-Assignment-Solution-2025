@@ -3,6 +3,7 @@ export const state = {
   description: "",
   customers: [],
   emails: [],
+  relevantEmails: [],
 };
 
 export const loadCustomers = async function () {
@@ -35,6 +36,12 @@ export const loadEmails = async function () {
     console.error(err);
     throw err;
   }
+};
+
+export const filterEmails = function (input) {
+  state.relevantEmails = state.emails.filter((email) =>
+    email.startsWith(input)
+  );
 };
 
 export const saveForm = function (form) {
