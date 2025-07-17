@@ -12,9 +12,17 @@ class EmailsView {
   }
 
   // Suggestions dropdown
+  // addHandlerRenderSuggestions(handler) {
+  //   const emailsFieldEl = this.#parentEl.querySelector(".emails-field");
+  //   emailsFieldEl.addEventListener("keyup", function (e) {
+  //     if (e.key.length !== 1) return;
+  //     handler(emailsFieldEl.value);
+  //   });
+  // }
   addHandlerRenderSuggestions(handler) {
     const emailsFieldEl = this.#parentEl.querySelector(".emails-field");
-    emailsFieldEl.addEventListener("keyup", function (e) {
+    let currentFocus;
+    emailsFieldEl.addEventListener("input", function (e) {
       if (e.key.length !== 1) return;
       handler(emailsFieldEl.value);
     });
