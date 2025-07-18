@@ -80,19 +80,7 @@ const controlRemoveAllEmails = function () {
   }
 };
 
-// const controlAddSubject = function () {
-//   try {
-//     const text = subjectView.addSubjectText();
-//     console.log(text);
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
-
 const init = function () {
-  // emailsView.addHandlerRenderEmails(controlShowEmails);
-  // emailsView.addHandlerRenderSuggestions(controlShowSuggestions);
-  // mainView.listenCloseSuggestionLists();
   mainView.addHandlerSubmitForm(controlSubmitForm);
   mainView.addHandlerCloseForm();
   emailsView.addHandlerInput(controlEmailInput);

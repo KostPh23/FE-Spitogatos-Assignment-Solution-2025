@@ -6,22 +6,6 @@ class EmailsView {
   #dropdown = this.#parentEl.querySelector(".dropdown");
   #selectedEmails = [];
 
-  // // Autocomplete component
-  // addHandlerRenderEmails(handler) {
-  //   const emailsFieldEl = this.#parentEl.querySelector(".emails-field");
-  //   emailsFieldEl.addEventListener("input", function () {
-  //     handler(this.value);
-  //   });
-  // }
-
-  // // Suggestions dropdown
-  // addHandlerRenderSuggestions(handler) {
-  //   const emailsFieldEl = this.#parentEl.querySelector(".emails-field");
-  //   emailsFieldEl.addEventListener("input", function () {
-  //     handler(this);
-  //   });
-  // }
-
   addHandlerInput(handler) {
     const emailsFieldEl = this.#parentEl.querySelector(".emails-field");
 
