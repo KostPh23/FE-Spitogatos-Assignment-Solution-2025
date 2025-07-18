@@ -14,4 +14,4 @@ As a user:
 - I want to have the subject, description and destination emails **be validated**. ✅
 - I want to **click a button that shows loading state** during the API call. ✅
 - I want to **click a button that handles errors** gracefully. ⚙️
-- I want to be able to **close the modal** by clicking the X or Cancel button.
+- I want to be able to **close the modal** by clicking the X or Cancel button. ✅
