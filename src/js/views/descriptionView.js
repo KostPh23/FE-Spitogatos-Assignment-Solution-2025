@@ -14,7 +14,7 @@ class DescriptionView {
 
   validateDescriptionText(text) {
     if (text.length < 10)
-      throw new Error("Description must be 10 characters or more");
+      throw new Error("Description must be 10 characters or more!");
   }
 
   renderError(errorMsg) {

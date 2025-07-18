@@ -1,7 +1,7 @@
 export const state = {
   subject: "",
   description: "",
-  customers: [],
+  // customers: [],
   emails: [],
   relevantEmails: [],
 };

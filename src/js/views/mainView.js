@@ -1,5 +1,7 @@
 class MainView {
   #parentEl = document.querySelector(".main-form");
+  #closeBtn = this.#parentEl.querySelector(".close-button");
+  #cancelBtn = this.#parentEl.querySelector(".cancel-button");
 
   // listenCloseSuggestionLists() {
   //   document.addEventListener("click", function (e) {
@@ -19,6 +21,15 @@ class MainView {
       e.preventDefault();
       handler();
     });
+  }
+
+  addHandlerCloseForm() {
+    this.#closeBtn.addEventListener("click", this.handleCloseForm.bind(this));
+    this.#cancelBtn.addEventListener("click", this.handleCloseForm.bind(this));
+  }
+
+  handleCloseForm() {
+    this.#parentEl.classList.toggle("hidden");
   }
 }
 

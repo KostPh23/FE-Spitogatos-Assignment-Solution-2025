@@ -61,7 +61,7 @@ const controlEnterAllEmails = async function () {
     await model.loadEmails();
 
     // 3) Rerender emails box with all emails as tags
-    emailsView.renderEmailDestinations();
+    // emailsView.renderEmailDestinations();
     emailsView.renderAddAllTags(model.state.emails);
   } catch (err) {
     console.error(err);
@@ -94,6 +94,7 @@ const init = function () {
   // emailsView.addHandlerRenderSuggestions(controlShowSuggestions);
   // mainView.listenCloseSuggestionLists();
   mainView.addHandlerSubmitForm(controlSubmitForm);
+  mainView.addHandlerCloseForm();
   emailsView.addHandlerInput(controlEmailInput);
   emailsView.addHandlerEnterAllEmails(controlEnterAllEmails);
   emailsView.addHandlerRemoveAllEmails(controlRemoveAllEmails);

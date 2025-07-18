@@ -10,18 +10,21 @@
   <body>
     <form action="/submit" method="POST" class="main-form">
       <fieldset>
-        <legend>Email sent Form</legend>
+        <header class="form-header clearfix">
+          <legend>Email sent Form</legend>
+          <div class="close-button">&times;</div>
+        </header>
 
         <div class="form-container">
           <!--Destination Emails-->
           <div class="destination-emails">
-            <!-- <div class="loader-container">
-              <div class="loader"></div>
-            </div> -->
             <label for="destination-emails" class="emails-title"
               >List of recipients</label
             >
             <div class="tag-container">
+              <!-- <div class="loader-container">
+                <div class="loader"></div>
+              </div> -->
               <!-- <div class="error-container">
                 <div class="error">&#9888; Error while receiving list</div>
               </div> -->
@@ -64,7 +67,7 @@
           </div>
         </div>
         <div class="form-control">
-          <button class="cancel-button">Cancel</button>
+          <button type="button" class="cancel-button">Cancel</button>
           <button class="submit-button">Submit</button>
         </div>
       </fieldset>
