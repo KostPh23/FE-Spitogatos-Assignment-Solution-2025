@@ -54,10 +54,14 @@ const controlEmailInput = async function (inputEl) {
 
 const controlEnterAllEmails = async function () {
   try {
-    // 1) Fetch all emails
+    // 1) Render loader
+    emailsView.renderLoader();
+
+    // 2) Fetch all emails
     await model.loadEmails();
 
-    // 2) Render all emails as tags
+    // 3) Rerender emails box with all emails as tags
+    emailsView.renderEmailDestinations();
     emailsView.renderAddAllTags(model.state.emails);
   } catch (err) {
     console.error(err);

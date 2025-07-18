@@ -47,6 +47,7 @@ legend {
 .subject-field,
 .description-field,
 .tag-container,
+.loader-container,
 .emails-field {
   display: block;
   width: 100%;
@@ -148,10 +149,6 @@ button:hover {
   color: #fff;
 }
 
-/* .hidden {
-  display: none;
-} */
-
 /* .dropdown:hover .dropdown-content {
   display: block;
 } */
@@ -160,7 +157,7 @@ button:hover {
 
 .tag-container {
   /* padding: 6px; */
-  min-height: 40px;
+  min-height: 170px;
   overflow: hidden;
 }
 
@@ -178,4 +175,42 @@ button:hover {
   margin-left: 8px;
   cursor: pointer;
   font-weight: bold;
+}
+
+/* Loading spinner */
+
+.destination-emails {
+  position: relative;
+}
+
+.loader-container {
+  position: relative;
+  height: 306px;
+  background-color: #f0f0f0;
+}
+
+.loader {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  border: 11px solid #d4d4d4;
+  border-top: 11px solid #1f9210;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
 }

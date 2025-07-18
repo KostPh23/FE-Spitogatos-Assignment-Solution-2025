@@ -65,6 +65,33 @@ class EmailsView {
     );
   }
 
+  renderEmailDestinations() {
+    const markup = `
+      <label for="destination-emails" class="emails-title"
+        >List of recipients</label
+      >
+      <div class="tag-container"></div>
+      <div class="dropdown">
+        <input
+          type="text"
+          placeholder="Type name or email"
+          class="emails-field"
+        />
+      </div>
+      <div class="emails-buttons">
+        <button type="button" class="enter-customers-button">
+          Enter all customers
+        </button>
+        <button type="button" class="remove-customers-button">
+          Remove all clients
+        </button>
+      </div>
+    `;
+    this.#clear();
+    this.#parentEl.insertAdjacentHTML("afterbegin", markup);
+    this.#tagContainer = this.#parentEl.querySelector(".tag-container");
+  }
+
   renderSuggestions(emails, inputEl) {
     const val = inputEl.value;
 
@@ -106,6 +133,16 @@ class EmailsView {
         if (email === tagEmail) this.removeTag(email, tagEl);
       });
     });
+  }
+
+  renderLoader() {
+    const markup = `
+      <div class="loader-container">
+        <div class="loader"></div>
+      </div>
+    `;
+    this.#clear();
+    this.#parentEl.insertAdjacentHTML("afterbegin", markup);
   }
 
   handleEmailOnEnter(inputEl, e) {
@@ -180,6 +217,10 @@ class EmailsView {
 
   getSelectedEmails() {
     return this.#selectedEmails;
+  }
+
+  #clear() {
+    this.#parentEl.innerHTML = "";
   }
 }
 
