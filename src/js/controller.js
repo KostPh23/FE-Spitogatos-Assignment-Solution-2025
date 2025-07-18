@@ -1,8 +1,9 @@
 import * as model from "./model.js";
 
-// import mainView from "./views/mainView.js";
-import subjectView from "./views/subjectView.js";
+import mainView from "./views/mainView.js";
 import emailsView from "./views/emailsView.js";
+import subjectView from "./views/subjectView.js";
+import descriptionView from "./views/descriptionView.js";
 
 // const controlShowEmails = async function (input) {
 //   try {
@@ -27,6 +28,17 @@ import emailsView from "./views/emailsView.js";
 //     console.error(err);
 //   }
 // };
+
+const controlSubmitForm = function () {
+  try {
+    model.state.emails = emailsView.getSelectedEmails();
+    model.state.subject = subjectView.getSubjectText();
+    model.state.description = descriptionView.getDescriptionText();
+    console.log(model.state);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 const controlEmailInput = async function (inputEl) {
   try {
@@ -64,14 +76,25 @@ const controlRemoveAllEmails = function () {
   }
 };
 
+const controlAddSubject = function () {
+  try {
+    const text = subjectView.addSubjectText();
+    console.log(text);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 const init = function () {
   // emailsView.addHandlerRenderEmails(controlShowEmails);
   // emailsView.addHandlerRenderSuggestions(controlShowSuggestions);
   // mainView.listenCloseSuggestionLists();
+  mainView.addHandlerSubmitForm(controlSubmitForm);
   emailsView.addHandlerInput(controlEmailInput);
   emailsView.addHandlerEnterAllEmails(controlEnterAllEmails);
   emailsView.addHandlerRemoveAllEmails(controlRemoveAllEmails);
   emailsView.addClickOutsideDropdown();
+  // subjectView.addHandlerAddSubject(controlAddSubject);
 };
 
 init();

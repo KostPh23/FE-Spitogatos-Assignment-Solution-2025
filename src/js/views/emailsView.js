@@ -37,7 +37,9 @@ class EmailsView {
   }
 
   addHandlerEnterAllEmails(handler) {
-    const enterCustomersBtn = this.#parentEl.querySelector(".enter-customers");
+    const enterCustomersBtn = this.#parentEl.querySelector(
+      ".enter-customers-button"
+    );
 
     enterCustomersBtn.addEventListener(
       "click",
@@ -46,8 +48,9 @@ class EmailsView {
   }
 
   addHandlerRemoveAllEmails(handler) {
-    const removeCustomersBtn =
-      this.#parentEl.querySelector(".remove-customers");
+    const removeCustomersBtn = this.#parentEl.querySelector(
+      ".remove-customers-button"
+    );
 
     removeCustomersBtn.addEventListener(
       "click",
@@ -167,6 +170,10 @@ class EmailsView {
       (email) => email !== input
     );
     tagEl.remove();
+  }
+
+  getSelectedEmails() {
+    return this.#selectedEmails;
   }
 }
 

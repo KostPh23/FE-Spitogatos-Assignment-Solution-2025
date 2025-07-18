@@ -90,22 +90,22 @@ button:hover {
   box-shadow: 2px 2px 2px #4f4f4f;
 }
 
-.enter-customers,
-.submit {
+.enter-customers-button,
+.submit-button {
   color: #fff;
   background-color: #1f9210;
   padding: 0.5rem;
 }
 
-.remove-customers,
-.cancel {
+.remove-customers-button,
+.cancel-button {
   color: #1f9210;
   background-color: #fff;
   padding: 0.5rem;
 }
 
-.enter-customers,
-.remove-customers {
+.enter-customers-button,
+.remove-customers-button {
   margin-bottom: 1rem;
 }
 
