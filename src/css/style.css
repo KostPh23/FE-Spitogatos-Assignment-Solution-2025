@@ -211,6 +211,24 @@ button:hover {
   }
 }
 
+/* Error handling */
+
+/* .error-container {
+  position: relative;
+  min-height: 170px;
+} */
+
+.error {
+  top: 40%;
+  left: 35%;
+  color: rgb(212, 0, 0);
+}
+
+/* .error::first-letter {
+  font-size: 20px;
+  color: rgb(212, 0, 0);
+} */
+
 .hidden {
   display: none;
 }

@@ -3,8 +3,8 @@
 class EmailsView {
   #parentEl = document.querySelector(".destination-emails");
   #tagContainer = this.#parentEl.querySelector(".tag-container");
+  #dropdown = this.#parentEl.querySelector(".dropdown");
   #selectedEmails = [];
-  #data;
 
   // // Autocomplete component
   // addHandlerRenderEmails(handler) {
@@ -141,20 +141,31 @@ class EmailsView {
         <div class="loader"></div>
       </div>
     `;
-    this.#clear();
+    this.#clear(this.#parentEl);
     this.#parentEl.insertAdjacentHTML("afterbegin", markup);
   }
 
+  renderError(errorMsg) {
+    const markup = `
+      <div class="error">&#9888; ${errorMsg}</div>
+    `;
+    this.#dropdown.insertAdjacentHTML("afterbegin", markup);
+  }
+
   handleEmailOnEnter(inputEl, e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      const value = inputEl.value.trim();
-      this.validateEmailsText(value);
-      if (value && !this.#selectedEmails.includes(value)) {
-        this.addTag(value);
-        inputEl.value = "";
-        this.closeAllLists();
+    try {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const value = inputEl.value.trim();
+        this.validateEmailsText(value);
+        if (value && !this.#selectedEmails.includes(value)) {
+          this.addTag(value);
+          inputEl.value = "";
+          this.closeAllLists();
+        }
       }
+    } catch (err) {
+      this.renderError(err.message);
     }
   }
 
@@ -183,7 +194,7 @@ class EmailsView {
   }
 
   closeAllLists() {
-    /* Close all suggestion dropdown lists in the document*/
+    // Close all suggestion dropdown lists in the document
     const items = document.querySelectorAll(".dropdown-items");
     items.forEach((item) => item.remove());
   }
@@ -212,15 +223,16 @@ class EmailsView {
 
   validateEmailsText(text) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text))
-      throw new Error("Emails must be in valid email format");
+      throw new Error("Emails must be in valid email format!");
   }
 
   getSelectedEmails() {
     return this.#selectedEmails;
   }
 
-  #clear() {
-    this.#parentEl.innerHTML = "";
+  #clear(el) {
+    // Clears the children of a given element
+    el.innerHTML = "";
   }
 }
 

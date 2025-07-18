@@ -22,10 +22,12 @@
               >List of recipients</label
             >
             <div class="tag-container">
-              <div class="error"></div>
+              <!-- <div class="error-container">
+                <div class="error">&#9888; Error while receiving list</div>
+              </div> -->
             </div>
-            <!-- <textarea class="emails-list"></textarea> -->
             <div class="dropdown">
+              <!-- <div class="error">&#9888; Error while receiving list</div> -->
               <input
                 type="text"
                 placeholder="Type name or email"
@@ -46,7 +48,9 @@
           <div class="subject">
             <label for="subject" class="subject-title">Subject</label>
             <p class="required">*</p>
-            <input type="text" class="subject-field" />
+            <div class="field-container">
+              <input type="text" class="subject-field" />
+            </div>
           </div>
 
           <!--Description-->
@@ -54,7 +58,9 @@
             <label for="description" class="description-title"
               >Description</label
             >
-            <textarea class="description-field"></textarea>
+            <div class="field-container">
+              <textarea class="description-field"></textarea>
+            </div>
           </div>
         </div>
         <div class="form-control">
