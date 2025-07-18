@@ -9,7 +9,7 @@ body {
   color: #4f4f4f;
 }
 
-form {
+.main-form {
   width: 720px;
   margin: 0 auto;
 }

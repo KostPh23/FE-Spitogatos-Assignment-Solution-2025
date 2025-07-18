@@ -112,6 +112,7 @@ class EmailsView {
     if (e.key === "Enter") {
       e.preventDefault();
       const value = inputEl.value.trim();
+      this.validateEmailsText(value);
       if (value && !this.#selectedEmails.includes(value)) {
         this.addTag(value);
         inputEl.value = "";
@@ -170,6 +171,11 @@ class EmailsView {
       (email) => email !== input
     );
     tagEl.remove();
+  }
+
+  validateEmailsText(text) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text))
+      throw new Error("Emails must be in valid email format");
   }
 
   getSelectedEmails() {

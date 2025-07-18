@@ -76,14 +76,14 @@ const controlRemoveAllEmails = function () {
   }
 };
 
-const controlAddSubject = function () {
-  try {
-    const text = subjectView.addSubjectText();
-    console.log(text);
-  } catch (err) {
-    console.error(err);
-  }
-};
+// const controlAddSubject = function () {
+//   try {
+//     const text = subjectView.addSubjectText();
+//     console.log(text);
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
 
 const init = function () {
   // emailsView.addHandlerRenderEmails(controlShowEmails);
